@@ -2,12 +2,12 @@ import { Client } from 'cassandra-driver'
 
 export const client = new Client({
   contactPoints: ['localhost'],
-  localDataCenter: 'datacenter1'
+  localDataCenter: 'datacenter1',
+  keyspace: 'vegetable_processing'
 })
 
 export async function connect() {
   try {
-    client.keyspace = 'vegetable_processing'
     await client.connect()
     console.log('👾 Connected to ScyllaDB')
   } catch (error) {

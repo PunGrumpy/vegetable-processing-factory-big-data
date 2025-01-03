@@ -7,7 +7,7 @@ A scalable IoT-based system for monitoring and controlling vegetable processing 
 ### 📦 Requirements
 
 - Node.js v23.0.0
-- [Bun](https://bun.sh) v1.0.0 or [PNPM](https://pnpm.io) v9.0.0
+- [Bun](https://bun.sh) v1.0.0
 - [Docker](https://www.docker.com) v27.0.0
 
 ### 🚀 Getting Started
@@ -22,21 +22,29 @@ git clone https://github.com/PunGrumpy/vet-processing-factory.git
 
 ```bash
 bun install
-# or
-pnpm install
 ```
 
-3. Start the development server:
+3. Initialize the database:
 
 ```bash
 bun dev # now it's initializing the database only
-# or
-pnpm dev
+```
+
+4. Seed the database:
+
+```bash
+bun dev:seed
+```
+
+5. Query the database:
+
+```bash
+bun dev:query
 ```
 
 > [!NOTE]
 > Running database server before starting the development server is required.
-> `bun db:setup` or `pnpm db:setup` can be used to initialize the database.
+> `bun db:setup` can be used to initialize the database.
 
 ## 📝 License
 

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "bun run src/index.ts",
     "dev:seed": "bun run src/seed.ts",
+    "dev:query": "bun run src/query.ts",
     "db:setup": "docker compose up -d",
     "db:teardown": "docker compose down",
     "db:remove": "docker compose down -v",
@@ -17,6 +18,9 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "cassandra-driver": "^4.7.2"
+    "@types/uuid": "^10.0.0",
+    "cassandra-driver": "^4.7.2",
+    "date-fns": "^4.1.0",
+    "uuid": "^11.0.3"
   }
 }
