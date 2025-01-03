@@ -1,0 +1,21 @@
+{
+  "name": "scylla-cluster",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run src/index.ts",
+    "db:setup": "docker compose up -d",
+    "db:teardown": "docker compose down",
+    "db:remove": "docker compose down -v",
+    "db:restart": "docker compose restart"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "cassandra-driver": "^4.7.2"
+  }
+}
