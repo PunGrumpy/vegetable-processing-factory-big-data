@@ -1,6 +1,6 @@
 # 🫛 IoT Vegetable Processing Factory
 
-Vegetable processing control and tracking system with IoT
+A scalable IoT-based system for monitoring and controlling vegetable processing operations. This project uses ScyllaDB for real-time data storage and analysis of production states, sensor readings, and system alerts
 
 ## 🌱 Setup
 

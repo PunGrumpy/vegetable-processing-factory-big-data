@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "bun run src/index.ts",
+    "dev:seed": "bun run src/seed.ts",
     "db:setup": "docker compose up -d",
     "db:teardown": "docker compose down",
     "db:remove": "docker compose down -v",
