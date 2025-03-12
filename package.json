@@ -4,23 +4,24 @@
   "type": "module",
   "scripts": {
     "dev": "bun run src/index.ts",
-    "dev:seed": "bun run src/seed.ts",
-    "dev:query": "bun run src/query.ts",
-    "db:setup": "docker compose up -d",
-    "db:teardown": "docker compose down",
-    "db:remove": "docker compose down -v",
-    "db:restart": "docker compose restart"
+    "dev:seed": "bun run src/index.ts seed",
+    "dev:query": "bun run src/index.ts query",
+    "seed": "bun run src/seed/index.ts",
+    "seed:production": "bun run src/seed/production.ts",
+    "seed:sensors": "bun run src/seed/sensors.ts",
+    "seed:parameters": "bun run src/seed/parameters.ts",
+    "db:setup": "bun run src/config/database.ts"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/mongoose": "^5.11.97"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@types/uuid": "^10.0.0",
-    "cassandra-driver": "^4.7.2",
-    "date-fns": "^4.1.0",
-    "uuid": "^11.0.3"
+    "@faker-js/faker": "^9.6.0",
+    "commander": "^13.1.0",
+    "mongoose": "^8.12.1"
   }
 }
