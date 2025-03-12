@@ -35,23 +35,11 @@ export async function generateProductionStates() {
         duration: faker.number.int({ min: 10, max: 120 }),
         temperature: faker.number.float({ min: 5, max: 95 }),
         humidity: faker.number.float({ min: 30, max: 90 }),
-        conveyor_speed: faker.number.float({
-          min: 0.5,
-          max: 5
-        }),
+        conveyor_speed: faker.number.float({ min: 0.5, max: 5 }),
         product_count: faker.number.int({ min: 100, max: 5000 }),
-        defect_percentage: faker.number.float({
-          min: 0,
-          max: 10
-        }),
-        water_consumption: faker.number.float({
-          min: 50,
-          max: 500
-        }),
-        energy_consumption: faker.number.float({
-          min: 10,
-          max: 200
-        })
+        defect_percentage: faker.number.float({ min: 0, max: 10 }),
+        water_consumption: faker.number.float({ min: 50, max: 500 }),
+        energy_consumption: faker.number.float({ min: 10, max: 200 })
       })
 
       previousState = stateId

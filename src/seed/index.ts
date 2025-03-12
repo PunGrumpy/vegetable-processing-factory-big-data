@@ -25,8 +25,7 @@ async function insertInBatches(
       // Try inserting documents one at a time for better error isolation
       for (let j = 0; j < batch.length; j++) {
         try {
-          const document = batch[j]
-          await model.create(document)
+          await model.create(batch[j])
           successCount++
         } catch (docError) {
           failureCount++

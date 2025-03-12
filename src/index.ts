@@ -29,7 +29,6 @@ program
     try {
       await connectToDatabase()
 
-      // Get some sample counts
       const productionStateCount = await ProductionState.countDocuments()
       const sensorDataCount = await SensorData.countDocuments()
       const stateParameterCount = await StateParameter.countDocuments()
@@ -39,7 +38,6 @@ program
       console.log(`- Sensor Data Points: ${sensorDataCount}`)
       console.log(`- State Parameters: ${stateParameterCount}`)
 
-      // Get a sample of each collection
       const productionStateSample = await ProductionState.findOne()
       const sensorDataSample = await SensorData.findOne()
       const stateParameterSample = await StateParameter.findOne()
@@ -60,11 +58,10 @@ program
     }
   })
 
-// Default action when no command is specified
-program.action(() => {
-  console.log('Welcome to the Vegetable Processing Factory Big Data System!')
-  console.log('Use --help to see available commands')
-  program.help()
-})
-
-program.parse(process.argv)
+program
+  .action(() => {
+    console.log('Welcome to the Vegetable Processing Factory Big Data System!')
+    console.log('Use --help to see available commands')
+    program.help()
+  })
+  .parse(process.argv)
