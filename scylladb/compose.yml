@@ -1,0 +1,19 @@
+services:
+  scylla:
+    image: scylladb/scylla:latest
+    container_name: scylla-db
+    ports:
+      - '9042:9042'
+      - '9180:9180'
+      - '7000:7000'
+      - '7001:7001'
+      - '7199:7199'
+      - '10000:10000'
+    volumes:
+      - scylla_store:/var/lib/scylla
+    environment:
+      - SCYLLA_CPUS=2
+      - SCYLLA_MEM=4G
+
+volumes:
+  scylla_store:
